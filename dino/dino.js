@@ -14,7 +14,7 @@ let dino = {
     w: 40,
     h: 40,
     dy: 0,
-    jumpCount: 0, // подвійний стрибок
+    jumpCount: 0,
     hp: 3
 };
 
@@ -22,8 +22,6 @@ let obstacles = [];
 let score = 0;
 let best = localStorage.getItem("dinoRecord") || 0;
 document.getElementById("best").innerText = best;
-
-// --- ФУНКЦІЇ МАЛЮВАННЯ ----------------------------------------------------
 
 function drawDino() {
     ctx.fillStyle = "#000";
@@ -52,8 +50,6 @@ function drawScore() {
     ctx.fillText("Очки: " + score, 680, 20);
 }
 
-// --- ЛОГІКА ГРИ -----------------------------------------------------------
-
 function spawnObstacle() {
     let height = 30 + Math.random() * 40;
     let width = 20 + Math.random() * 20;
@@ -73,18 +69,15 @@ function update() {
 
     drawGround();
 
-    // Гравітація
     dino.dy += gravity;
     dino.y += dino.dy;
 
-    // Заборона падіння нижче землі
     if (dino.y >= 150) {
         dino.y = 150;
         dino.dy = 0;
-        dino.jumpCount = 0; // оновлюємо подвійний стрибок
+        dino.jumpCount = 0;
     }
 
-    // Рух та спавн кактусів
     spawnTimer++;
     if (spawnTimer > 80 + Math.random() * 40) {
         spawnObstacle();
@@ -94,10 +87,8 @@ function update() {
     obstacles.forEach((o, i) => {
         o.x -= speed;
 
-        // Видалення ліворуч
         if (o.x + o.w < 0) obstacles.splice(i, 1);
 
-        // Перевірка колізії
         if (
             dino.x < o.x + o.w &&
             dino.x + dino.w > o.x &&
@@ -122,7 +113,7 @@ function update() {
     });
 
     score++;
-    speed += speedIncrease; // плавне збільшення швидкості
+    speed += speedIncrease;
 
     drawDino();
     drawHP();
@@ -131,11 +122,9 @@ function update() {
     requestAnimationFrame(update);
 }
 
-// --- КЕРУВАННЯ ------------------------------------------------------------
-
 document.addEventListener("keydown", (e) => {
     if (e.code === "Space") {
-        if (dino.jumpCount < 2) { // подвійний стрибок!
+        if (dino.jumpCount < 2) {
             dino.dy = -12;
             dino.jumpCount++;
         }
@@ -144,8 +133,6 @@ document.addEventListener("keydown", (e) => {
     if (e.code === "KeyR") restartGame();
 });
 
-// --- ПЕРЕЗАПУСК -----------------------------------------------------------
-
 function restartGame() {
     score = 0;
     speed = 6;
@@ -153,5 +140,4 @@ function restartGame() {
     obstacles = [];
 }
 
-// --- СТАРТ ---------------------------------------------------------------
 update();

@@ -30,7 +30,6 @@ function drawFood() {
 function update() {
     let head = { x: snake[0].x + vx, y: snake[0].y + vy };
 
-    // Borders
     if (head.x < 0 || head.x >= 400 || head.y < 0 || head.y >= 400) {
         restart();
         return;
@@ -38,7 +37,6 @@ function update() {
 
     snake.unshift(head);
 
-    // Food
     if (head.x === food.x && head.y === food.y) {
         score++;
         food = randomFood();
@@ -52,7 +50,6 @@ function update() {
         snake.pop();
     }
 
-    // Self collision
     for (let i = 4; i < snake.length; i++) {
         if (snake[i].x === head.x && snake[i].y === head.y) {
             restart();
