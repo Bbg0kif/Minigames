@@ -18,7 +18,7 @@ function randomFood() {
 }
 
 function drawSnake() {
-    ctx.fillStyle = "lime";
+    ctx.fillStyle = "green";
     snake.forEach(s => ctx.fillRect(s.x, s.y, size, size));
 }
 

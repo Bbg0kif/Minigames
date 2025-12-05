@@ -41,7 +41,7 @@ function drawObstacle(o) {
 function drawHP() {
     ctx.fillStyle = "red";
     ctx.font = "20px Arial";
-    ctx.fillText("❤️ " + dino.hp, 10, 20);
+    ctx.fillText("[] " + dino.hp, 10, 20);
 }
 
 function drawScore() {

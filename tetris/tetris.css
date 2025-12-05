@@ -1,7 +1,62 @@
 body {
+    margin: 0;
+    background: #ead7c0;
+    font-family: 'Courier New', monospace;
+    color: #4a2e16;
     text-align: center;
-    background: #f2f2f2;
 }
+
+h1 {
+    margin-top: 20px;
+    font-size: 40px;
+    color: #4a2e16;
+    text-shadow: 2px 2px 0 #ffffff70;
+}
+
+.tetris-container {
+    margin: 20px auto;
+    padding: 15px;
+    width: fit-content;
+    background: #d8b692;
+    border: 3px solid #6e4b2c;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #6e4b2c50;
+}
+
 canvas {
-    background: #000;
+    background: #f7e8d5;
+    border: 3px solid #6e4b2c;
+    border-radius: 4px;
+}
+
+.block {
+    border: 1px solid #6e4b2c;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #c18e60;
+    color: #fff;
+    border: 2px solid #6e4b2c;
+    border-radius: 8px;
+    margin: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #6e4b2c;
+    color: #ffffff;
+}
+
+.score-box {
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 8px;
+    background: #d8b692;
+    border: 2px solid #6e4b2c;
+    display: inline-block;
+    border-radius: 6px;
 }

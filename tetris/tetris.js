@@ -49,7 +49,7 @@ function createPiece(type) {
 }
 
 function draw() {
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = '#f7e8d5';
     ctx.fillRect(0,0,canvas.width,canvas.height);
     drawMatrix(arena,{x:0,y:0});
     drawMatrix(player.matrix, player.pos);

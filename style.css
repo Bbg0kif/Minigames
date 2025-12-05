@@ -1,35 +1,77 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", monospace;
+}
+
+body {
+    background: #f2d7b6;
+    padding: 40px 20px;
     text-align: center;
+    color: #3a2f26;
 }
 
+/* Заголовок */
 h1 {
-    margin-top: 40px;
-    font-size: 40px;
+    font-size: 26px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px #e0b98d;
 }
 
+/* Кнопки в меню */
 .menu {
-    margin-top: 40px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .btn {
-    padding: 15px 25px;
-    background: #007bff;
-    color: white;
+    padding: 18px 22px;
+    background: #b57f50;
+    color: #fff3dc;
     text-decoration: none;
-    border-radius: 8px;
-    display: inline-block;
-    font-size: 20px;
-    transition: 0.2s;
+    border-radius: 6px;
+    border: 3px solid #5b3e23;
+    transition: 0.1s;
+    font-size: 12px;
 }
 
 .btn:hover {
-    background: #0056d6;
+    background: #d89b65;
+    transform: translateY(-3px);
+}
+
+/* Ігрове поле */
+canvas {
+    margin-top: 20px;
+    border: 5px solid #5b3e23;
+    background: #ffeccc;
+    box-shadow: 0 0 15px #5b3e23;
+}
+
+/* Текст під іграми */
+.score, #best {
+    margin-top: 10px;
+    color: #3a2f26;
+}
+
+/* Кнопка повернення */
+.back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #b57f50;
+    color: #fff3dc;
+    padding: 10px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 3px solid #5b3e23;
+}
+
+.back:hover {
+    background: #d89b65;
 }

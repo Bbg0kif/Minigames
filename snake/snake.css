@@ -1,10 +1,18 @@
 body {
-    background: #f5f5f5;
+    background: #ead7c0;
     text-align: center;
     font-family: Arial;
 }
 
+h1 {
+    margin-top: 20px;
+    font-size: 40px;
+    color: #4a2e16;
+    text-shadow: 2px 2px 0 #ffffff70;
+}
+
 canvas {
-    background: #000;
-    border: 2px solid #333;
+    background: #f7e8d5;
+    border: 3px solid #6e4b2c;
+    border-radius: 4px;
 }
