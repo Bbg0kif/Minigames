@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Гра Уникни (Avoid Game)</title>
+    <link rel="stylesheet" href="avoid.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-area">
+            <div id="player"></div>
+        </div>
+        
+        <div id="score-board">
+            Рахунок: <span id="score">0</span>
+        </div>
+
+        <div id="game-over-screen" class="hidden">
+            <h2>Гру Закінчено!</h2>
+            <p>Ваш фінальний рахунок: <span id="final-score">0</span></p>
+            <button id="restart-button">Спробувати знову</button>
+        </div>
+    </div>
+
+    <script src="avoid.js"></script>
+</body>
+</html>
